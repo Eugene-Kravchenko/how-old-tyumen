@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- google fonts  -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- No Ui Slider -->
+  <link rel="stylesheet" href="./slider/nouislider.css">  
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="crossorigin=""/>
+   <!--mapbox-->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+  <!--search-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <title>How Old Tyumen</title>
+</head>
+<body>
+  <div class="legend">
+    <img src="./diagram/leg.svg" alt="">
+  </div>
+  <!-- <div class="histogram"> -->
+    <img class="hist" src="./diagram/Ресурс 1.svg" alt="">
+  <!-- </div> -->
+  <div id="slider"></div>
+
+  <div id="slide-in">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <!-- <select id="info">
+      <option value="">Пусто</option>
+    </select> -->
+    <div class="building-items">
+      <div id="building-name"></div>
+      <div id="building-photo"></div>
+      <div id="building-year">Год постройки: </div>
+      <div id="building-style">Стиль: </div>
+      <div id="building-arch">Архитектор: </div>
+      <div id="building-addr">Адрес: </div>
+      <div id="building-wiki">Википедия</div>
+      <div id="building-url">Ссылка</div>
+    </div>
+    <!-- <span class='close-block'></span> -->
+
+  </div>
+  <header class="header">
+    <div class="header_inner ">
+      <div class="header_logo ">
+        <div class="col-11">Исторический облик г. Тюмень</div>
+        <!-- <img src="./img/Wapen_Tjoemen.png" alt=""> -->
+      </div>
+      <nav class="nav">
+        <!-- <a class="nav_link" href="#">Я ещё не придумал</a>
+        <a class="nav_link" href="#">Я ещё не придумал</a>
+        <a class="nav_link" href="#">Я ещё не придумал</a> -->
+      </nav>
+    </div>
+
+  </header>
+    <!-- <div class="1">
+      <div id="slider"></div>
+    </div> -->
+    <div id="map"></div>
+  </div>
+
+  <!-- <div id='mapbox' style='width: 400px; height: 300px;'></div>
+  <script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZW5lZ3Vla3IiLCJhIjoiY2tpanhsdTRyMDJ4ZDMwcXF0dTgzczFhbCJ9.k441GlOBjjIvAV9F_Gzs0A';
+  var map = new mapboxgl.Map({
+  container: 'mapbox',
+  style: 'mapbox://styles/mapbox/streets-v11'
+  });
+  </script> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <script src="./slider/nouislider.js"></script> <!-- No ui slider-->
+  <script src="./JS/script.js"></script>
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+</body>
+</html>
