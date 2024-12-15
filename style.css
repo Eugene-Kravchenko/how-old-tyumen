@@ -1,0 +1,267 @@
+
+#map {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+     
+.leaflet-control-zoom {
+  display: none; /*ОТКЛЮЧАЕМ ОТОБРАЖЕНИЕ ДЕФОЛТНОГО LEAFLET МАСШТАБА*/
+}
+
+body {
+	margin:0; /*убрали внешний отступ*/
+  /* font-family: 'Open Sans', sans-serif;	font-size: 16px; */
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  /* font-style: italic; */
+  /* font-weight: 300; */
+	color: #333; 
+  line-height: 1.6; /*межстрочный отступ*/
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+}
+
+ /*убираем отступы у всех заголовков*/
+ h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+}
+
+.container { 
+  width: 100%;
+  max-width:1200px;
+  margin: 0 auto;  /*выравнивание по центру*/
+  position: relative;
+}
+.slider {
+  position: absolute;
+  top: 0;
+}
+  /* ШАПКА*/
+
+.header {
+  width: 100%;
+  position: absolute; 
+  /*absolute потходит для шапки, ибо все остальные
+  значения выносят шапку за общий фон */
+  padding-top: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  /* background-color: #1E2023; */
+  background-color: #57595C;
+  color: white;
+
+}
+.header_inner { /*иннер этот нужен лишь для создания флексов 
+  тк необходим родитель т.е он расползся в строчку  не столбец*/
+  display: flex;
+  justify-content: space-between; /* переместило навигациювправо*/
+  align-items: center; /* выровняли лого и nav по центру*/
+}
+.header_logo{
+  font-size: 18px;
+  font-weight: 400;
+  color:white;
+  margin-left: 600px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+.nav {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.nav_link {
+  color: #9D9D9D;
+  text-decoration: none; /*УБРАЛИ ПОДЧЕРКИВАНИЕ СНИЗУ 
+   У ССЫЛОК (ВАУ) */
+  display: inline-block;
+  vertical-align: top; /* top - выравнивание верхнекрая элемента по верху 
+  самого высокого элемента строки.
+  */
+  /* vertical-align выравнивает элемент по вертикали*/
+   margin-left: 25px; 
+  position: relative;
+}
+.nav_link:hover { /*Событийный селектор*/
+  transition: 0.2s linear;
+  color:#e0c974;                     /*C O LR */
+}
+          
+
+/* ВСПЛЫВАЮЩЕЕ ОКНО */
+
+#slide-in {
+  top: 140px;
+  left: 15px;
+  padding: 10px;
+  position: absolute;
+  width: 350px;
+  z-index: 1200;
+  background-color: #57595C;
+  /* background: #4D8196; */
+  /* margin-left: -270px; */
+  transition: 0.5s;
+  /* opacity: .6; */
+  display:none;
+  max-height: 500px;
+  overflow: auto;
+  color: white;
+
+}
+#slide-in.in {
+  display:block
+}
+.building-items {
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 25px;
+}
+
+#building-name {
+  text-align: center;
+  padding-bottom: 12px;
+  font-weight: 400;
+}
+#building-photo {
+  text-align: center;
+}
+a {
+  color: white;
+}
+
+#building-photo::before{ /*нижняя полоска*/
+  bottom: 0;
+  background-color: #e0c974;
+}
+#building-year, #building-style, #building-arch, #building-addr, #building-wiki, #building-url{
+padding-top: 8px;
+}
+
+.close-block {
+  display: block;
+  position: absolute;
+  top: 8px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAElBMVEXqAAD8oaH/AAD/ra3/vr7///91+I/7AAAAQklEQVR42oXPwQoAIAgD0JXu/385FfTQgnYweKAp9pUXmE+swAFWAG8owQBTqjQQ8SQOcAdRQVtkqHy7dDFd/X/tAVqqAopyUfkOAAAAAElFTkSuQmCC);
+  cursor: pointer;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 26px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.container {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  /* margin-top: -140px; */
+  z-index: 2000;
+  width: 600px;
+  height: 30px;
+  /* margin: 0 auto; */
+}
+
+.legend {
+  position: absolute;
+  left: 0;
+  top: 3%;
+  width: 430px;
+  height: 70px;
+  z-index: 2001;
+  background-color: #57595C;
+  padding: 5px 10px;
+
+}
+.hist {
+  position: absolute;
+  right: 20%;
+  bottom: 3%;  
+  width: 900px;
+  height: 100px;
+  z-index: 2001;
+  /* background-color: white; */
+  /* padding: 10px 20px; */
+
+}
+
+/* .noUi-connect {
+  height: 100px;
+} */
+#slider {
+  position: absolute;
+  width: 683px;
+  /* left: 3.9%; */
+  height: 60px;
+  right: 27%;
+  bottom: 2.5%;
+  z-index: 2002;
+
+
+}
+.noUi-connect {
+  opacity: .2;
+  border-width: 0ch;
+}
+.noUi-target {
+  background: none;  /* отключили белый фон*/
+  border: none;
+  box-shadow: none;
+}
+
+/* .noUi-horizontal .noUi-handle {
+  width: 34px;
+    height: 28px;
+    right: -17px;
+    top: -6px; 
+    width: 50%;
+    height: 50%;
+} */
+
+.noUi-horizontal .noUi-handle {
+  transform: scale(0.7)
+}
+
+/* .noUi-handle:before, .noUi-handle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  background: #E8E7E6;
+  left: 14px;
+  top: 6px;
+} */
+/* .noUi-base {
+  opacity: .1;
+
+} */
+/* .leaflet-pane {
+  background-color: #4D8196;
+
+}
+.leaflet-control-layers leaflet-control {
+  background-color: #4D8196;
+
+} */
+
+
+.leaflet-right .leaflet-control {
+  margin-left: 100px;
+}
